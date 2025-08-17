@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Rotation } from '../types';
 
@@ -14,8 +13,8 @@ const Slider: React.FC<{
 }> = ({ label, value, onChange}) => (
     <div className="flex flex-col">
         <div className="flex justify-between items-center mb-1">
-            <label className="font-medium text-sm text-gray-300">{label} Axis</label>
-            <span className="text-sm font-mono bg-gray-700 text-brand-light px-2 py-1 rounded">
+            <label className="font-medium text-sm text-slate-600">{label} Axis</label>
+            <span className="text-sm font-mono bg-slate-100 text-slate-900 px-2 py-1 rounded">
                 {value.toFixed(0)}°
             </span>
         </div>
@@ -25,7 +24,7 @@ const Slider: React.FC<{
             max="180"
             value={value}
             onChange={onChange}
-            className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+            className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
         />
     </div>
 );
@@ -34,7 +33,7 @@ const Slider: React.FC<{
 const RotationControls: React.FC<RotationControlsProps> = ({ rotation, onRotationChange }) => {
   return (
     <div className="space-y-4">
-      <h2 className="text-xl font-semibold text-center text-brand-secondary border-b-2 border-gray-700 pb-2">Rotation Controls</h2>
+      <h2 className="text-xl font-semibold text-center text-slate-900 border-b-2 border-slate-200 pb-2">Rotation Controls</h2>
       <Slider 
         label="X" 
         value={rotation.x} 

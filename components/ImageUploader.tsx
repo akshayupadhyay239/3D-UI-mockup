@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 
 interface ImageUploaderProps {
@@ -21,7 +20,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload }) => {
 
   return (
     <div className="w-full">
-      <h2 className="text-xl font-semibold text-center text-brand-secondary border-b-2 border-gray-700 pb-2 mb-4">Upload Image</h2>
+      <h2 className="text-xl font-semibold text-center text-slate-900 border-b-2 border-slate-200 pb-2 mb-4">Upload Image</h2>
       <input
         type="file"
         ref={fileInputRef}

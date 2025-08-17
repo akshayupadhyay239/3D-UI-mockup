@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useCallback } from 'react';
 import ImageCanvas from './components/ImageCanvas';
 import RotationControls from './components/RotationControls';
@@ -69,15 +68,15 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
+    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 lg:p-8 font-sans">
       <header className="w-full max-w-7xl text-center mb-6">
-        <h1 className="text-4xl sm:text-5xl font-bold text-brand-secondary tracking-tight">3D Image Transformer</h1>
-        <p className="text-lg text-gray-400 mt-2">Upload, rotate, scale, and frame your image in 3D, then export your creation.</p>
+        <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight">3D Image Transformer</h1>
+        <p className="text-lg text-slate-500 mt-2">Upload, rotate, scale, and frame your image in 3D, then export your creation.</p>
       </header>
 
       <div className="w-full max-w-7xl flex flex-col lg:flex-row gap-8">
         {/* Controls Panel */}
-        <aside className="w-full lg:w-1/3 xl:w-1/4 bg-gray-800 rounded-2xl shadow-2xl p-6 flex flex-col gap-6 h-fit">
+        <aside className="w-full lg:w-1/3 xl:w-1/4 bg-white rounded-2xl shadow-xl p-6 flex flex-col gap-6 h-fit">
           <ImageUploader onImageUpload={handleImageUpload} />
           {imageUrl && (
             <>
@@ -87,14 +86,14 @@ const App: React.FC = () => {
               <div className="flex flex-col sm:flex-row sm:gap-4 gap-2">
                 <button
                   onClick={handleReset}
-                  className="w-full bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
+                  className="w-full bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-3 px-4 rounded-lg transition-colors duration-200"
                 >
                   Reset All
                 </button>
                 <button
                   onClick={handleExport}
                   disabled={isExporting}
-                  className="w-full bg-brand-primary hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200 disabled:bg-gray-500 disabled:cursor-not-allowed"
+                  className="w-full bg-brand-primary hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200 disabled:bg-slate-400 disabled:cursor-not-allowed"
                 >
                   {isExporting ? 'Exporting...' : 'Export as PNG'}
                 </button>
@@ -104,7 +103,7 @@ const App: React.FC = () => {
         </aside>
 
         {/* Canvas Viewer */}
-        <main className="w-full lg:w-2/3 xl:w-3/4 aspect-video bg-gray-800 rounded-2xl shadow-2xl overflow-hidden relative">
+        <main className="w-full lg:w-2/3 xl:w-3/4 aspect-video bg-white rounded-2xl shadow-xl overflow-hidden relative">
           {imageUrl ? (
             <ImageCanvas 
               ref={canvasRef} 
