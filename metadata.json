@@ -1,0 +1,5 @@
+{
+  "name": "3D Image Rotator",
+  "description": "An interactive web application that allows users to upload an image, rotate it in a 3D space using intuitive sliders, and export the current view as a PNG file. Built with React, Three.js, and Tailwind CSS.",
+  "requestFramePermissions": []
+}
